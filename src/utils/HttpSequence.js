@@ -1,17 +1,17 @@
 export default class HttpSequence {
-  constructor(httpService, transactionId = null) {
+  constructor(httpService, sequenceId = null) {
     this.httpService = httpService;
-    this.transactionId = transactionId ?? Symbol(transactionId);
+    this.sequenceId = sequenceId ?? Symbol('sequence');
     this.controller = new AbortController();
     this.aborted = false;
     this.ops = new Map();
-    const transaction = this;
+    const sequence = this;
     return new Proxy(httpService, {
       get(target, p) {
-        if(typeof transaction[p] !== 'undefined'){
-          return transaction[p];
+        if(typeof sequence[p] !== 'undefined'){
+          return sequence[p];
         }
-        return (...args) => transaction.addOp(p, [...args]);
+        return (...args) => sequence.addOp(p, [...args]);
       }
     });
   }
@@ -22,7 +22,7 @@ export default class HttpSequence {
     }
     const signal = this.controller.signal;
     const prm = this.httpService.request(...args, signal)
-    prm.catch((err) => {
+    prm.catch(() => {
       if(!this.aborted){
         this.abort();
       }
