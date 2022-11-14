@@ -1,0 +1,29 @@
+{
+  "component": {
+    "form-input": {
+      "padding": {
+        "value": "{size.padding.xsmall.value}"
+      },
+      "font-size": {
+        "value": "{size.font.medium.value}"
+      },
+      "text-align": {
+        "value": "left"
+      },
+      "background-color": {
+        "value": "{color.background.primary.value}"
+      },
+      "color": {
+        "value": "{color.font.primary.value}"
+      },
+      "focus": {
+        "outline": {
+          "value": "{size.outline.primary.width.value} solid {color.accent.primary.value}"
+        },
+        "outline-offset": {
+          "value": "{size.outline.primary.offset.value}"
+        }
+      }
+    }
+  }
+}

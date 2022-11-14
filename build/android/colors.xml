@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly
+  Generated on Sun, 13 Nov 2022 19:01:47 GMT
+-->
+<resources>
+  <color name="component_form_error_color">#ffc40000</color>
+  <color name="component_form_input_background_color">#ffffffff</color>
+  <color name="component_form_input_color">#ff111111</color>
+  <color name="color_accent_primary">#ff0366d6</color>
+  <color name="color_background_primary">#ffffffff</color>
+  <color name="color_background_link">#ff0366d6</color>
+  <color name="color_background_inverse">#ff111111</color>
+  <color name="color_base_white">#ffffffff</color>
+  <color name="color_base_black">#ff111111</color>
+  <color name="color_base_gray">#ffdddddd</color>
+  <color name="color_base_blue">#ff0366d6</color>
+  <color name="color_base_red100">#ffc40000</color>
+  <color name="color_font_primary">#ff111111</color>
+  <color name="color_font_link">#ff0366d6</color>
+  <color name="color_font_inverse">#ffffffff</color>
+  <color name="color_font_error">#ffc40000</color>
+  
+</resources>

@@ -1,0 +1,8 @@
+{
+  "component": {
+    "form-error": {
+      "padding": { "value": "{size.padding.xsmall.value}" },
+      "color": { "value": "{color.font.error.value}" }
+    }
+  }
+}

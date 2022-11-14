@@ -1,0 +1,14 @@
+{
+  "size": {
+    "outline": {
+      "primary": {
+        "width": {
+          "value": "0.01"
+        },
+        "offset": {
+          "value": "0.01"
+        }
+      }
+    }
+  }
+}
