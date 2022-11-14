@@ -3,7 +3,11 @@
     "background": {
       "primary": { "value": "#ffffff" },
       "link": { "value": "#0366d6" },
-      "inverse": { "value": "#111111" }
+      "inverse": { "value": "#111111" },
+      "error": { "value": "{color.base.red200.value}" },
+      "success": { "value": "{color.base.green100.value}" },
+      "warning": { "value": "{color.base.yellow100.value}" },
+      "info": { "value": "{color.base.blue100.value}" }
     }
   }
 }

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 13 Nov 2022 19:01:47 GMT
+ * Generated on Mon, 14 Nov 2022 18:40:51 GMT
  */
 
 :root {
@@ -13,19 +13,37 @@
   --component-form-input-color: #111111;
   --component-form-input-focus-outline: 0.01rem solid #0366d6;
   --component-form-input-focus-outline-offset: 0.01rem;
+  --component-toast-container-width: 20rem;
   --color-accent-primary: #0366d6;
   --color-background-primary: #ffffff;
   --color-background-link: #0366d6;
   --color-background-inverse: #111111;
+  --color-background-error: #ffabab;
+  --color-background-success: #abffab;
+  --color-background-warning: #ffffab;
+  --color-background-info: #ababff;
   --color-base-white: #ffffff;
   --color-base-black: #111111;
-  --color-base-gray: #dddddd;
   --color-base-blue: #0366d6;
+  --color-base-gray: #dddddd;
+  --color-base-green100: #abffab;
+  --color-base-green200: #00c400;
   --color-base-red100: #c40000;
+  --color-base-red200: #ffabab;
+  --color-base-yellow100: #ffffab;
+  --color-base-yellow200: #c4c400;
+  --color-base-blue100: #ababff;
+  --color-base-blue200: #0000c4;
+  --color-border-error: #c40000;
+  --color-border-black: #111111;
+  --color-border-success: #00c400;
+  --color-border-warning: #c4c400;
+  --color-border-info: #0000c4;
   --color-font-primary: #111111;
   --color-font-link: #0366d6;
   --color-font-inverse: #ffffff;
   --color-font-error: #c40000;
+  --size-border-primary-width: 0.01rem;
   --size-font-small: 0.75rem; /* the small size of the font */
   --size-font-medium: 1rem; /* the medium size of the font */
   --size-font-large: 2rem; /* the large size of the font */

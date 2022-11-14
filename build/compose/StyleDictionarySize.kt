@@ -1,7 +1,7 @@
 
 
 // Do not edit directly
-// Generated on Sun, 13 Nov 2022 19:01:47 GMT
+// Generated on Mon, 14 Nov 2022 18:40:52 GMT
 
 
 
@@ -15,6 +15,8 @@ object StyleDictionarySize {
   val componentFormErrorPadding = 3.20.dp
   val componentFormInputFontSize = 16.00.sp
   val componentFormInputPadding = 3.20.dp
+  val componentToastContainerWidth = 320.00.dp
+  val sizeBorderPrimaryWidth = 0.16.dp
   /** the base size of the font */
   val sizeFontBase = 16.00.sp
   /** the large size of the font */

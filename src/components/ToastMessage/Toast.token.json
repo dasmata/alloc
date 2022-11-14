@@ -1,0 +1,11 @@
+{
+  "component": {
+    "toast": {
+      "container": {
+        "width": {
+          "value": "20"
+        }
+      }
+    }
+  }
+}

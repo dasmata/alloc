@@ -3,7 +3,7 @@
 //
 
 // Do not edit directly
-// Generated on Sun, 13 Nov 2022 19:01:47 GMT
+// Generated on Mon, 14 Nov 2022 18:40:52 GMT
 
 
 #import <Foundation/Foundation.h>
@@ -12,6 +12,8 @@
 extern float const ComponentFormErrorPadding;
 extern float const ComponentFormInputPadding;
 extern float const ComponentFormInputFontSize;
+extern float const ComponentToastContainerWidth;
+extern float const SizeBorderPrimaryWidth;
 extern float const SizeFontSmall;
 extern float const SizeFontMedium;
 extern float const SizeFontLarge;

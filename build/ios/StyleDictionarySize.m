@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly
-// Generated on Sun, 13 Nov 2022 19:01:47 GMT
+// Generated on Mon, 14 Nov 2022 18:40:52 GMT
 
 
 #import "StyleDictionarySize.h"
@@ -13,6 +13,8 @@
 float const ComponentFormErrorPadding = 3.20f;
 float const ComponentFormInputPadding = 3.20f;
 float const ComponentFormInputFontSize = 16.00f;
+float const ComponentToastContainerWidth = 320.00f;
+float const SizeBorderPrimaryWidth = 0.16f;
 float const SizeFontSmall = 12.00f;
 float const SizeFontMedium = 16.00f;
 float const SizeFontLarge = 32.00f;

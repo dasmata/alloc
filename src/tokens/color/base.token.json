@@ -3,9 +3,16 @@
     "base": {
       "white": { "value": "#ffffff" },
       "black": { "value": "#111111" },
-      "gray": { "value": "#dddddd" },
       "blue": { "value": "#0366d6" },
-      "red100": { "value": "#c40000" }
+      "gray": { "value": "#dddddd" },
+      "green100": { "value": "#abffab" },
+      "green200": { "value": "#00c400" },
+      "red100": { "value": "#c40000" },
+      "red200": { "value": "#ffabab" },
+      "yellow100": { "value": "#ffffab" },
+      "yellow200": { "value": "#c4c400" },
+      "blue100": { "value": "#ababFF" },
+      "blue200": { "value": "#0000c4" }
     }
   }
 }

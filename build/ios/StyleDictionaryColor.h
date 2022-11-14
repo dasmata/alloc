@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly
-// Generated on Sun, 13 Nov 2022 19:01:47 GMT
+// Generated on Mon, 14 Nov 2022 18:40:52 GMT
 
 
 #import <UIKit/UIKit.h>
@@ -17,11 +17,27 @@ ColorAccentPrimary,
 ColorBackgroundPrimary,
 ColorBackgroundLink,
 ColorBackgroundInverse,
+ColorBackgroundError,
+ColorBackgroundSuccess,
+ColorBackgroundWarning,
+ColorBackgroundInfo,
 ColorBaseWhite,
 ColorBaseBlack,
-ColorBaseGray,
 ColorBaseBlue,
+ColorBaseGray,
+ColorBaseGreen100,
+ColorBaseGreen200,
 ColorBaseRed100,
+ColorBaseRed200,
+ColorBaseYellow100,
+ColorBaseYellow200,
+ColorBaseBlue100,
+ColorBaseBlue200,
+ColorBorderError,
+ColorBorderBlack,
+ColorBorderSuccess,
+ColorBorderWarning,
+ColorBorderInfo,
 ColorFontPrimary,
 ColorFontLink,
 ColorFontInverse,
