@@ -25,7 +25,8 @@ export default class Router {
         window.history.pushState(params, '', route.path)
       }
     } else {
-      await this.redirect(Symbol.for('login'), {redirect: Symbol.keyFor(routeName) })
+      // prevent infinite loop redirect
+      Symbol.keyFor(routeName) !== 'login' && await this.redirect(Symbol.for('login'), {redirect: Symbol.keyFor(routeName) })
     }
   }
 

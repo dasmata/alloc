@@ -9,8 +9,8 @@ export default {
       value: 2
     }
   ],
-  defaultRights: 0,
+  defaultRights: 2,
   routes: {
-    [Symbol.for('login')]: 1
+    [Symbol.for('login')]: aclService => !aclService.identityService.isAuth()
   }
 }

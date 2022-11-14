@@ -29,14 +29,13 @@ class FormInput extends LitElement {
       'loading': { type: String, attribute: true },
       'validation': { type: Object, attribute: true },
       'valid': { type: Boolean, attribute: false },
-      'required': { type: Boolean, attribute: true },
-      'formController': { type: Object, attribute: true }
+      'required': { type: Boolean, attribute: true }
     }
   }
 
   constructor() {
     super();
-    this._controller = new FormInputController(this)
+    this.controller = new FormInputController(this)
     this.value = '';
   }
 
@@ -52,8 +51,8 @@ class FormInput extends LitElement {
           value='${this.value}'
           placeholder='${this.placeholder}'
         />
-        ${this._controller.isLoading()}
-        ${this._controller.errors()}
+        ${this.controller.isLoading()}
+        ${this.controller.errors()}
       </label>
     `
   }

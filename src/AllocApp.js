@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import { until } from 'lit/directives/until.js';
 import './pages/Login/LoginPage'
 import di from './DI'
 
@@ -27,7 +28,8 @@ class AllocApp extends LitElement {
   }
 
   render() {
-    return this.pageElement || html`<div>Loading...</div>`;
+    return html`${until(this.pageElement, html`<div>Loading...</div>`)}`
+    ;
   }
 }
 

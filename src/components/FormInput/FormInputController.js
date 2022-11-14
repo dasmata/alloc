@@ -1,13 +1,14 @@
 import loadingDirective from './LoadingDirective';
 import errorDirective from './ErrorDirective';
 import di from '../../DI';
+import ObservableController from '../../controller/ObservableController';
 
 export default class FormInputController {
   constructor(host, formController) {
     (this.host = host).addController(this)
+    this.observable = new ObservableController();
     this.loading = false;
     this.error = null;
-    this.observers = new Set();
     di('validation').then(service => this.validationService = service);
   }
 
@@ -37,7 +38,10 @@ export default class FormInputController {
 
   setLoading(value) {
     this.loading = value;
-    this.notify();
+    this.observable.notify(() => ({
+      loading: this.loading,
+      error: this.error
+    }));
   }
 
   handleInput = (e) => {
@@ -64,12 +68,18 @@ export default class FormInputController {
     if (!this.error) {
       throw new Error(`No error message defined for "${type}"`);
     }
-    this.notify();
+    this.observable.notify(() => ({
+      loading: this.loading,
+      error: this.error
+    }));
   }
 
   resetError() {
     this.error = null;
-    this.notify();
+    this.observable.notify(() => ({
+      loading: this.loading,
+      error: this.error
+    }));
   }
 
   async validate(type = 'required') {
@@ -101,28 +111,13 @@ export default class FormInputController {
     return true;
   }
 
-  subscribe(callback){
-    this.observers.add(callback);
-    return () => {
-      this.observers.delete(callback);
-    };
-  }
-
-  notify(){
-    this.observers.forEach((observer) => {
-      observer(() => ({
-        loading: this.loading,
-        error: this.error
-      }))
-    })
-  }
 
   isLoading() {
-    return loadingDirective(this);
+    return loadingDirective(this.observable);
   }
 
   errors() {
-    return errorDirective(this);
+    return errorDirective(this.observable);
   }
 }
 

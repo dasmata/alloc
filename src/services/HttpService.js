@@ -34,16 +34,19 @@ export default class HttpService {
 
   getUrl(path){
     // config or smth
-    return `http://localhost:8001${path}`
+    return `http://localhost:8000${path}`
   }
 
   async request(method, path, data = null, signal = null){
-    const prm = fetch(this.getUrl(path), {
+    const options = {
       signal,
       method,
-      header: this.getHeaders(),
-      body: data
-    })
+      header: this.getHeaders()
+    }
+    if(['put', 'patch', 'post'].includes(method)){
+      options.body = data || null;
+    }
+    const prm = fetch(this.getUrl(path), )
     return prm.then(response => {
       if( response.ok ){
         return response.json();
@@ -53,7 +56,7 @@ export default class HttpService {
   }
 
   async get(path) {
-
+    return this.request('get', path)
   }
 
   async post(path, data) {

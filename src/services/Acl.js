@@ -7,8 +7,12 @@ export default class Acl {
   }
 
   isAllowed(route) {
-    return this.config.routes[route]
-      ? this.config.routes[route] & this.identityService.getUserRights()
-      : this.config.defaultRights;
+    const userRights = this.identityService.getUserRights();
+    if (this.config.routes[route]) {
+      return typeof this.config.routes[route] === 'function'
+        ? this.config.routes[route](this)
+        : this.config.routes[route] & userRights;
+    }
+    return this.config.defaultRights & userRights;
   }
 }

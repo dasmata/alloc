@@ -3,19 +3,20 @@ import {GenericPage} from '../GenericPage';
 import di from '../../DI'
 import '../../components/FormInput/FormInput';
 import '../../components/ButtonComponent/ButtonComponent';
+import '../../components/ToastMessage/ToastMessage';
 import LoginController from './LoginController';
 
 class LoginPage extends GenericPage {
 
   constructor() {
     super();
-    const controller = new LoginController(this)
-    this._formController = controller.formController
+    this.controller = new LoginController(this)
     di('validation').then(service => this.validationService = service);
   }
 
   render() {
     return html`<main>
+      ${this.controller.messages()}
       <form action='/login' method='post'>
         <form-input
           name='username'
@@ -29,7 +30,6 @@ class LoginPage extends GenericPage {
             change: v => this.validationService.email(v)
           }}
           required
-          .formController=${this._formController}
         >
           <span slot='label'>Username</span>
         </form-input>
@@ -40,12 +40,13 @@ class LoginPage extends GenericPage {
             required: 'This field is required'
           }}
           required
-          .formController=${this._formController}
         >
           <span slot='label'>Password</span>
         </form-input>
         <div>
-          <button>Login</button>
+          <button-component>
+            <span slot='label'>Login</span>
+          </button-component>
         </div>
       </form>
     </main>`
