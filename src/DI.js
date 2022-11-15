@@ -126,5 +126,5 @@ export default function(name) {
         return di || (di = new DI(app))}
     }
   }
-  return di.getService(name);
+  return di?.getService(name);
 }

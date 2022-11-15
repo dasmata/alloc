@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../../src/components/ButtonComponent/ButtonComponent.js';
+import '../../../src/components/ButtonComponent/ButtonComponent.js';
 
 describe('ButtonComponent', () => {
   let element;
@@ -21,7 +21,7 @@ describe('ButtonComponent', () => {
 
   it('renders the label', async () => {
     const label = element.querySelector('span[slot=label]');
-    expect(label.innerText).to.be.equal('test')
+    expect(label.textContent).to.be.equal('test')
     expect(label).to.exist;
   });
 

@@ -24,16 +24,10 @@ export default class FormInputController {
       [ this.host, 'focus', this.handleFocus ],
     ]
     this.events.forEach(evt => evt[0].addEventListener(evt[1], evt[2]))
-    if (this.host.formController) {
-      this.host.formController.addInputController(this)
-    }
   }
 
   hostDisconnected() {
     this.events.forEach(evt => evt[0].removeEventListener(evt[1], evt[2]))
-    if (this.host.formController) {
-      this.host.formController.removeInputController(this)
-    }
   }
 
   setLoading(value) {
@@ -65,6 +59,7 @@ export default class FormInputController {
 
   setError(type) {
     this.error = this.host.errorMessages ? this.host.errorMessages[type] : null;
+    this.error && this.host.shadowRoot.querySelector('input').classList.add('error')
     if (!this.error) {
       throw new Error(`No error message defined for "${type}"`);
     }
@@ -76,6 +71,7 @@ export default class FormInputController {
 
   resetError() {
     this.error = null;
+    this.host.shadowRoot.querySelector('input').classList.remove('error')
     this.observable.notify(() => ({
       loading: this.loading,
       error: this.error

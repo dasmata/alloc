@@ -46,7 +46,8 @@ class FormInput extends LitElement {
           <slot name='label'></slot>
         </div>
         <input
-          class='form-input${this._error ? ' error' : ''}'
+          name='${this.name}'
+          class='form-input'
           type='${this.type}'
           value='${this.value}'
           placeholder='${this.placeholder}'

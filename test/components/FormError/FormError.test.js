@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../../src/components/FormError/FormError.js';
+import '../../../src/components/FormError/FormError.js';
 
 describe('FormError', () => {
   let element;
@@ -13,7 +13,7 @@ describe('FormError', () => {
   it('renders a button', async () => {
     const err = element.shadowRoot.querySelector('div');
     expect(err).to.exist;
-    expect(err.innerText).to.be.equal('test');
+    expect(err.textContent).to.be.equal('test');
   });
 
 
