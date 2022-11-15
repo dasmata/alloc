@@ -4,7 +4,7 @@ import di from '../../DI';
 import ObservableController from '../../controller/ObservableController';
 
 export default class FormInputController {
-  constructor(host, formController) {
+  constructor(host) {
     (this.host = host).addController(this)
     this.observable = new ObservableController();
     this.loading = false;
