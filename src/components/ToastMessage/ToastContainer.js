@@ -59,7 +59,7 @@ class ToastContainer extends LitElement {
   }
 
   render() {
-    return html`<div class='toast-container'><slot name='content'>${map(this.toasts, el => el[1])}</slot></div>`
+    return html`<div class='toast-container'>${map(this.toasts, el => el[1])}</div>`
   }
 }
 

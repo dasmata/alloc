@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../../../src/components/FormError/FormError.js';
+import '../../src/components/FormError/FormError.js';
 
 describe('FormError', () => {
   let element;

@@ -2,12 +2,12 @@ import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 import {jest, expect as jExpect} from '@jest/globals';
 
-jest.unstable_mockModule('../../../src/DI', () => ({
+jest.unstable_mockModule('../../src/DI', () => ({
   default: function() {
     return Promise.resolve(validation)
   }
 }))
-await import('../../../src/components/FormInput/FormInput.js');
+await import('../../src/components/FormInput/FormInput.js');
 
 const validation ={
   empty: jest.fn(),
