@@ -52,8 +52,12 @@ class FormInput extends LitElement {
           value='${this.value}'
           placeholder='${this.placeholder}'
         />
-        ${this.controller.isLoading()}
-        ${this.controller.errors()}
+        <div id='loader' aria-live='polite'>
+          ${this.controller.isLoading()}
+        </div>
+        <div id='error-container' aria-live='polite'>
+          ${this.controller.errors()}
+        </div>
       </label>
     `
   }

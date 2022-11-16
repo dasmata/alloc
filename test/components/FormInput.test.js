@@ -7,7 +7,7 @@ jest.unstable_mockModule('../../src/DI', () => ({
     return Promise.resolve(validation)
   }
 }))
-await import('../../src/components/FormInput/FormInput.js');
+await import('../../src/components/FormInput/FormInput');
 
 const validation ={
   empty: jest.fn(),
@@ -72,6 +72,7 @@ describe('FormInput', () => {
         r()
       }, 500)
     }))
+    await expect(element).shadowDom.to.be.accessible();
   })
 
   it('validates passes empty validation', async () => {
@@ -110,6 +111,7 @@ describe('FormInput', () => {
         r()
       }, 500)
     }));
+    await expect(element).shadowDom.to.be.accessible();
   })
 
   it('returns input value as form data', () => {
@@ -209,6 +211,7 @@ describe('FormInput', () => {
         r()
       }, 500)
     }))
+    await expect(element).shadowDom.to.be.accessible();
     await validationPromise;
     await (new Promise( r => {
       setTimeout(() => {

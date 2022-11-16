@@ -11,6 +11,7 @@ export default class FormController {
   }
 
   hostDisconnected() {
+    this.inputs.forEach(el => el.removeEventListener('keypress', this.handleKeypress))
     this.inputs.clear();
     this.submitBtns.clear();
     this.host.shadowRoot.removeEventListener('submit', this.handleSubmit)
@@ -26,16 +27,10 @@ export default class FormController {
     });
     this.host.shadowRoot.querySelectorAll('form-input').forEach(input => {
       if (!this.inputs.has(input)) {
+        input.addEventListener('keypress', this.handleKeypress)
         this.inputs.add(input);
       }
     });
-    this.host.shadowRoot.querySelector('[type=submit]') || (() => {
-      const btn = document.createElement('input');
-      btn.setAttribute('type', 'submit')
-      btn.style.display = 'none';
-      this.host.shadowRoot.querySelector('form')?.appendChild(btn);
-      return btn;
-    })()
   }
 
 
@@ -44,12 +39,13 @@ export default class FormController {
     return Boolean(results.reduce((acc, result) => acc & result, 1));
   }
 
-  addInputController(inputController) {
-    this.inputs.add(inputController)
-  }
-
-  removeInputController(inputController) {
-    this.inputs.remove(inputController)
+  handleKeypress = async e => {
+    if(e.key === 'Enter'){
+      this.host.shadowRoot.dispatchEvent(new Event('submit', {
+        bubbles: true,
+        cancelable: true
+      }))
+    }
   }
 
   handleSubmit = async e => {
