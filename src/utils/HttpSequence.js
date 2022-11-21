@@ -11,57 +11,93 @@ export default class HttpSequence {
         if(typeof sequence[p] !== 'undefined'){
           return sequence[p];
         }
-        return (...args) => sequence.addOp(p, [...args]);
+        return (...args) => {
+          return sequence.addOp(p, [...args]);
+        }
       }
     });
   }
 
-  async request(...args){
+  request(...args){
     if (this.aborted) {
       return Promise.reject(new Error('Aborted'));
     }
     const signal = this.controller.signal;
     const prm = this.httpService.request(...args, signal)
-    prm.catch(() => {
+    prm.catch((e) => {
       if(!this.aborted){
         this.abort();
       }
-    })
+      return Promise.reject(e);
+    });
     return prm;
   }
 
-  abort(){
+  abort = () => {
     this.controller.abort();
     this.aborted = true;
   }
 
-  async addOp(method, params){
+  addOp(method, params){
     const operationId = Symbol('operation');
     let prm = null
+    const ops = []
     this.ops.set(operationId, {
       method,
       params,
       callback: opPromise => {
         prm = opPromise;
+        ops.forEach((op) => {
+          prm[op.method](...op.params);
+        })
       }
     });
-    return new Proxy({}, {
-      get: (target, p) => {
-        return (...args) => prm[p](...args)
+    const proxy = new Proxy({}, {
+      get (target, p) {
+        return (...args) => {
+          if (prm) {
+            return prm[p](...args)
+          }
+          ops.push({
+            method: p,
+            params: args
+          })
+          return proxy;
+        }
       }
-    })
+    });
+    return proxy;
   }
 
-  run() {
-    const prms = [];
+  run = () => {
+    let chain = null
+    const results = [];
+    const getOpPromise = (operation) => {
+      return this.httpService[operation.method].apply(this, operation.params)
+        .then((data) => {
+          results.push(data);
+          return data;
+        }).catch(e => {
+          results.push(e)
+          return e;
+        })
+    }
     this.ops.forEach(operation => {
-      const prm = this.httpService[operation.method].apply(this, operation.params);
-      operation.callback(prm);
-      prms.push(prm)
+      if (chain) {
+        chain.then(
+          () => getOpPromise(operation)
+        )
+      } else {
+        chain = getOpPromise(operation)
+      }
+      operation.callback(chain);
     })
     return {
-      abort: this.abort.bind(this),
-      promise: Promise.all(prms)
+      abort: this.abort,
+      promise: new Promise(r => {
+        chain.then(() => r(results));
+        chain.catch(() => r(results));
+      })
     }
   }
 }

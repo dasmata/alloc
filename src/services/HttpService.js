@@ -37,7 +37,7 @@ export default class HttpService {
     return `http://localhost:8000${path}`
   }
 
-  async request(method, path, data = null, signal = null){
+  request(method, path, data = null, signal = null){
     const options = {
       signal,
       method,
@@ -52,22 +52,22 @@ export default class HttpService {
         return response.json();
       }
       return Promise.reject(new HttpResponseError(response))
-    })
+    });
   }
 
-  async get(path) {
+  get(path) {
     return this.request('get', path)
   }
 
-  async post(path, data) {
+  post(path, data) {
     return this.request('post', path, HttpService.getFormData(data))
   }
 
-  async patch(path, data) {
+  patch(path, data) {
 
   }
 
-  async delete(path) {
+  delete(path) {
 
   }
 
