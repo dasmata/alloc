@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/AllocApp.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AllocApp",
+          "members": [
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "'My app'",
+              "privacy": "public",
+              "attribute": "title"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "title",
+              "fieldName": "title"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "alloc-app",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "alloc-app",
+          "declaration": {
+            "name": "AllocApp",
+            "module": "src/AllocApp.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/alloc-app.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "App"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/alloc-app.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "App",
+          "declaration": {
+            "name": "App",
+            "module": "stories/alloc-app.stories.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/block-navigation.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/prettify.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/sorter.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/pages/GenericPage.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "GenericPage",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "GenericPage",
+          "declaration": {
+            "name": "GenericPage",
+            "module": "src/pages/GenericPage.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/pages/LoginPage.js",
+      "declarations": [],
+      "exports": []
+    }
+  ]
+}
