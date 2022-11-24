@@ -6,23 +6,10 @@ import '../../src/components/ButtonComponent/ButtonComponent.js';
 describe('ButtonComponent', () => {
   let element;
   const slotNames = [
-    'prefix-icon',
-    'label',
-    'sufix-icon'
+    'icon',
   ]
   beforeEach(async () => {
-    element = await fixture(html`<button-component><span slot='label'>test</span></button-component>`);
-  });
-
-  it('renders a button', async () => {
-    const btn = element.shadowRoot.querySelector('button');
-    expect(btn).to.exist;
-  });
-
-  it('renders the label', async () => {
-    const label = element.querySelector('span[slot=label]');
-    expect(label.textContent).to.be.equal('test')
-    expect(label).to.exist;
+    element = await fixture(html`<button-component label="test"></button-component>`);
   });
 
   it('renders the slots', async () => {

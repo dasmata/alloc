@@ -8,7 +8,13 @@ import LoginController from './LoginController';
 class LoginPage extends LitElement {
   static get styles(){
     return css`
-      :host{
+      :host {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      main {
         width: 30vw;
         border: var(--size-border-primary-width) solid var(--color-border-black);
         border-radius: 30px;
@@ -40,8 +46,8 @@ class LoginPage extends LitElement {
             change: v => this.validationService.email(v)
           }}
           required
+          label="Username"
         >
-          <span slot='label'>Username</span>
         </form-input>
         <form-input
           name='password'
@@ -50,13 +56,11 @@ class LoginPage extends LitElement {
             required: 'This field is required'
           }}
           required
+          label="Password"
         >
-          <span slot='label'>Password</span>
         </form-input>
         <div>
-          <button-component>
-            <span slot='label'>Login</span>
-          </button-component>
+          <button-component label="Login"></button-component>
         </div>
       </form>
     </main>`

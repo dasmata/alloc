@@ -1,7 +1,9 @@
 import { css, html, LitElement } from 'lit';
-import '../FormError/FormError'
-import '../SpinnerLoader/SpinnerLoader'
+import '../FormError/FormError';
+import '../SpinnerLoader/SpinnerLoader';
 import FormInputController from './FormInputController';
+import '@material/web/textfield/outlined-text-field';
+import '@material/web/formfield/formfield';
 
 class FormInput extends LitElement {
   static get styles() {
@@ -32,6 +34,7 @@ class FormInput extends LitElement {
     return {
       'errorMessages': { type: Object, attribute: true },
       'name': { type: String, attribute: true },
+      'label': { type: String, attribute: true },
       'type': { type: String, attribute: true },
       'placeholder': { type: String, attribute: true },
       'value': { type: String, attribute: true },
@@ -50,18 +53,15 @@ class FormInput extends LitElement {
 
   render() {
     return html`
-      <label>
-        <div>
-          <slot name='label'></slot>
-        </div>
-        <input
+      <md-formfield label="${this.label}" alignEnd spaceBetween disabled>
+        <md-outlined-text-field
           name='${this.name}'
-          class='form-input'
           type='${this.type}'
+          class='form-input'
           value='${this.value}'
           placeholder='${this.placeholder}'
-        />
-      </label>
+        ></md-outlined-text-field>
+      </md-formfield>
       <div id='loader' aria-live='polite'>
         ${this.controller.isLoading()}
       </div>

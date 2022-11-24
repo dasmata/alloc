@@ -46,7 +46,7 @@ export default class HttpService {
     if(['put', 'patch', 'post'].includes(method)){
       options.body = data || null;
     }
-    const prm = fetch(this.getUrl(path), )
+    const prm = fetch(this.getUrl(path), options)
     return prm.then(response => {
       if( response.ok ){
         return response.json();

@@ -32,7 +32,7 @@ export default class FormInputController {
 
   setLoading(value) {
     this.loading = value;
-    const input = this.host.shadowRoot.querySelector('input');
+    const input = this.host.shadowRoot.querySelector('.form-input');
     if(value){
       input.setAttribute('aria-busy', 'true');
     } else {
@@ -66,7 +66,7 @@ export default class FormInputController {
   setError(type) {
     this.error = this.host.errorMessages ? this.host.errorMessages[type] : null;
     if(this.error){
-      const input = this.host.shadowRoot.querySelector('input');
+      const input = this.host.shadowRoot.querySelector('.form-input');
       input.classList.add('error')
       input.setAttribute('aria-invalid', 'true');
     }
@@ -82,7 +82,7 @@ export default class FormInputController {
 
   resetError() {
     this.error = null;
-    const input = this.host.shadowRoot.querySelector('input');
+    const input = this.host.shadowRoot.querySelector('.form-input');
     input.classList.remove('error')
     input.removeAttribute('aria-invalid');
     this.observable.notify(() => ({

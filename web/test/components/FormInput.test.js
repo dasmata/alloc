@@ -34,29 +34,6 @@ describe('FormInput', () => {
     </form-input>`);
   });
 
-  it('renders an input element with the correct name', async () => {
-    const input = element.shadowRoot.querySelector('input');
-    element.setAttribute('name', 'test')
-    await (new Promise(r => {
-      setTimeout(() => {
-        expect(input).to.exist
-        expect(input.getAttribute('name')).to.be.equal('test')
-        r()
-      })
-    }))
-  })
-
-  it('renders the label slot', () => {
-    const slot = element.shadowRoot.querySelector('slot[name=label]');
-    expect(slot).to.exist
-  })
-
-  it('renders the label', () => {
-    const slot = element.querySelector('[slot=label]');
-    expect(slot).to.exist
-    expect(slot.textContent).to.be.equal('label')
-  })
-
   it('validates empty inputs', async () => {
     validation.empty.mockReturnValueOnce(false)
     const input = element.shadowRoot.querySelector('input');
