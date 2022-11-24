@@ -1,5 +1,6 @@
 import HttpResponseError from '../errors/HttpResponseError';
 import HttpSequence from '../utils/HttpSequence';
+import config from '../config/api.js'
 
 export default class HttpService {
 
@@ -33,8 +34,7 @@ export default class HttpService {
   }
 
   getUrl(path){
-    // config or smth
-    return `http://localhost:8000${path}`
+    return `${config.secure ? 'https' : 'http'}://${config.host}:${config.port}/v${config.version}/${path}`
   }
 
   request(method, path, data = null, signal = null){

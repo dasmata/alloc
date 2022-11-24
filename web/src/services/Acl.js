@@ -8,11 +8,9 @@ export default class Acl {
 
   isAllowed(route) {
     const userRights = this.identityService.getUserRights();
-    if (this.config.routes[route]) {
-      return typeof this.config.routes[route] === 'function'
-        ? this.config.routes[route](this)
-        : this.config.routes[route] & userRights;
-    }
-    return this.config.defaultRights & userRights;
+    const requiredRights = this.config.routes[route] || this.config.defaultRights;
+    return typeof requiredRights === 'function'
+      ? requiredRights(this)
+      : requiredRights & userRights;
   }
 }

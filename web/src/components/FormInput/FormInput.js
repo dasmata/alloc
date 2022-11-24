@@ -6,12 +6,21 @@ import FormInputController from './FormInputController';
 class FormInput extends LitElement {
   static get styles() {
     return css`
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      label > * {
+        padding: var(--size-padding-medium)
+      }
       input {
         padding: var(--component-form-input-padding);
         font-size: var(--component-form-input-font-size);
         text-align: var(--component-form-input-text-align);
         color: var(--component-form-input-color);
         background: var(--component-form-input-background-color);
+        border: 1px solid var(--color-border-blue);
       }
       input:focus {
         outline: var(--component-form-input-focus-outline);
@@ -52,13 +61,13 @@ class FormInput extends LitElement {
           value='${this.value}'
           placeholder='${this.placeholder}'
         />
-        <div id='loader' aria-live='polite'>
-          ${this.controller.isLoading()}
-        </div>
-        <div id='error-container' aria-live='polite'>
-          ${this.controller.errors()}
-        </div>
       </label>
+      <div id='loader' aria-live='polite'>
+        ${this.controller.isLoading()}
+      </div>
+      <div id='error-container' aria-live='polite'>
+        ${this.controller.errors()}
+      </div>
     `
   }
 }

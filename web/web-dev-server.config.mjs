@@ -25,6 +25,8 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
     function rewriteIndex(context, next) {
       if (context.url.split('/').pop().split('.').length < 2) {
         context.url = '/index.html';
+      } else if(context.url === '/src/config/api.js'){
+        context.url = '/src/config/api_dev.js'
       }
       return next();
     },

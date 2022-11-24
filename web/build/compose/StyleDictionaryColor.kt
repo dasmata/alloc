@@ -1,7 +1,7 @@
 
 
 // Do not edit directly
-// Generated on Mon, 14 Nov 2022 18:40:52 GMT
+// Generated on Tue, 22 Nov 2022 18:10:52 GMT
 
 
 
@@ -33,6 +33,7 @@ object StyleDictionaryColor {
   val colorBaseYellow100 = Color(0xffffffab)
   val colorBaseYellow200 = Color(0xffc4c400)
   val colorBorderBlack = Color(0xff111111)
+  val colorBorderBlue = Color(0xffababff)
   val colorBorderError = Color(0xffc40000)
   val colorBorderInfo = Color(0xff0000c4)
   val colorBorderSuccess = Color(0xff00c400)

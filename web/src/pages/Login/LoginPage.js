@@ -1,13 +1,23 @@
-import { html } from 'lit';
-import {GenericPage} from '../GenericPage';
+import {css, html, LitElement} from 'lit';
 import di from '../../DI'
 import '../../components/FormInput/FormInput';
 import '../../components/ButtonComponent/ButtonComponent';
 import '../../components/ToastMessage/ToastMessage';
 import LoginController from './LoginController';
 
-class LoginPage extends GenericPage {
-
+class LoginPage extends LitElement {
+  static get styles(){
+    return css`
+      :host{
+        width: 30vw;
+        border: var(--size-border-primary-width) solid var(--color-border-black);
+        border-radius: 30px;
+        box-shadow: 5px 5px var(--color-base-black);
+        padding: var(--size-padding-large);
+        text-align: center;
+      }
+    `
+  }
   constructor() {
     super();
     this.controller = new LoginController(this)

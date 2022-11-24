@@ -1,9 +1,20 @@
-import { LitElement, html } from 'lit';
+import {LitElement, html, css} from 'lit';
 import { until } from 'lit/directives/until.js';
 import './pages/Login/LoginPage'
 import di from './DI'
 
 class AllocApp extends LitElement {
+  static get styles() {
+    return css`
+      :host {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--color-background-primary);
+      }
+    `;
+  }
   static get properties() {
     return {
       title: { type: String },

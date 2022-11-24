@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly
-// Generated on Mon, 14 Nov 2022 18:40:52 GMT
+// Generated on Tue, 22 Nov 2022 18:10:52 GMT
 
 
 import UIKit
@@ -31,6 +31,7 @@ public enum StyleDictionaryColor {
     public static let baseYellow100 = UIColor(red: 1.000, green: 1.000, blue: 0.671, alpha: 1)
     public static let baseYellow200 = UIColor(red: 0.769, green: 0.769, blue: 0.000, alpha: 1)
     public static let borderBlack = UIColor(red: 0.067, green: 0.067, blue: 0.067, alpha: 1)
+    public static let borderBlue = UIColor(red: 0.671, green: 0.671, blue: 1.000, alpha: 1)
     public static let borderError = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
     public static let borderInfo = UIColor(red: 0.000, green: 0.000, blue: 0.769, alpha: 1)
     public static let borderSuccess = UIColor(red: 0.000, green: 0.769, blue: 0.000, alpha: 1)

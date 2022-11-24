@@ -11,7 +11,7 @@ export default class Identity {
 
   auth(data) {
     const s = this.httpService.sequence();
-    const prm = s.get('/api/login.json', data);
+    const prm = s.get('user/login', data);
     prm.then(userData => {
       this.user = userData;
       return this.user;
