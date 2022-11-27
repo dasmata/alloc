@@ -15,9 +15,9 @@ export default class LoginController {
 
   handleSubmit = async data => {
     this.observable.notify([])
-    const { abort, promise } = this.identityService.auth(data);
-    this.abort = abort;
     try {
+      const { abort, promise } = this.identityService.auth(data);
+      this.abort = abort;
       await promise;
       this.abort = null;
       const router = await di('router');

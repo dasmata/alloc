@@ -73,6 +73,14 @@
         "danger": {
           "value": "{color.base.red.100}",
           "type": "color"
+        },
+        "success": {
+          "value": "{color.base.green.100}",
+          "type": "color"
+        },
+        "warning": {
+          "value": "{color.base.yellow.100}",
+          "type": "color"
         }
       }
     }

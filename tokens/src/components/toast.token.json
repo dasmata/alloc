@@ -1,0 +1,38 @@
+{
+  "component": {
+    "toast": {
+      "container": {
+        "width": {
+          "value": "{size.90x}",
+          "type": "sizing"
+        }
+      },
+      "color": {
+        "default": {
+          "value": "{color.base.white.200}",
+          "type": "color"
+        },
+        "error": {
+          "value": "{color.base.semantic.danger}",
+          "type": "color"
+        },
+        "success": {
+          "value": "{color.base.semantic.success}",
+          "type": "color"
+        },
+        "warning": {
+          "value": "{color.base.semantic.warning}",
+          "type": "color"
+        }
+      },
+      "border": {
+        "radius": {
+          "default": {
+            "value": "{border.radius.100}",
+            "type": "borderRadius"
+          }
+        }
+      }
+    }
+  }
+}

@@ -19,12 +19,6 @@
           "type": "sizing"
         }
       },
-      "height": {
-        "default": {
-          "value": "{size.11x}",
-          "type": "sizing"
-        }
-      },
       "primary": {
         "background": {
           "normal": {

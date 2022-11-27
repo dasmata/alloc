@@ -15,10 +15,19 @@ export default class Identity {
     prm.then(userData => {
       this.user = userData;
       return this.user;
-    }).catch(e => {
-      this.logService.warn(e)
     })
-    return s.run();
+    const { abort, promise } = s.run();
+    return {
+      abort,
+      promise: new Promise(async (resolve, reject) => {
+        const results = await promise;
+        if(results[0] instanceof Error){
+          reject(results[0]);
+        } else {
+          resolve(results[0]);
+        }
+      })
+    }
   }
 
   getUserToken() {

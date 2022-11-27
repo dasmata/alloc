@@ -51,7 +51,8 @@ export default class HttpService {
       if( response.ok ){
         return response.json();
       }
-      return Promise.reject(new HttpResponseError(response))
+      const err = new HttpResponseError(response);
+      return Promise.reject(err);
     });
   }
 

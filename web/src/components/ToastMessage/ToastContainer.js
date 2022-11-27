@@ -8,31 +8,28 @@ class ToastContainer extends LitElement {
       :host {
         width: var(--component-toast-container-width);
         position: absolute;
-        top: var(--size-padding-medium);
-        right: var(--size-padding-medium);
+        top: var(--size-7x);
+        right: var(--size-7x);
       }
 
       .toast-message {
-        background-color: var(--color-background-primary);
-        padding: var(--size-padding-medium);
-        border: var(--size-border-primary-width) solid var(--color-border-black);
-        margin-bottom: var(--size-padding-large);
+        background-color: var(--component-toast-color-default);
+        padding: var(--size-5x);
+        margin-bottom: var(--size-4x);
+        box-shadow: 0 var(--size-unit) var(--size-4x) var(--shadow-color-black-normal);
+        border-radius: var(--component-toast-border-radius-default);
       }
       .toast-message.error {
-        border-color: var(--color-border-error);
-        background-color: var(--color-background-error);
+        background-color: var(--component-toast-color-error);
       }
       .toast-message.success {
-        border-color: var(--color-border-success);
-        background-color: var(--color-background-success);
+        background-color: var(--component-toast-color-success);
       }
       .toast-message.warning {
-        border-color: var(--color-border-warning);
-        background-color: var(--color-background-warning);
+        background-color: var(--component-toast-color-warning);
       }
       .toast-message.info {
-        border-color: var(--color-border-info);
-        background-color: var(--color-background-primary);
+        background-color: var(--component-toast-color-default);
       }
     `
   }
