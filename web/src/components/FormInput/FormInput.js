@@ -2,29 +2,65 @@ import { css, html, LitElement } from 'lit';
 import '../FormError/FormError'
 import '../SpinnerLoader/SpinnerLoader'
 import FormInputController from './FormInputController';
+import {classMap} from "lit/directives/class-map.js";
 
 class FormInput extends LitElement {
   static get styles() {
     return css`
       label {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
+        text-align: left;
+        width: var(--component-form-input-width-default);
+        margin: 0 auto;
+        font-family: var(--font-family-roboto);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-body100);
+        line-height: var(--font-size-body100);
+        color: var(--component-form-input-color-default);
       }
-      label > * {
-        padding: var(--size-padding-medium)
+
+      label.focus {
+        color: var(--component-form-input-border-color-focus);
       }
+
+      label.disabled {
+        color: var(--component-form-input-border-color-inactive);
+      }
+
+      label.error {
+        color: var(--component-form-input-color-error);
+      }
+
       input {
-        padding: var(--component-form-input-padding);
-        font-size: var(--component-form-input-font-size);
-        text-align: var(--component-form-input-text-align);
-        color: var(--component-form-input-color);
-        background: var(--component-form-input-background-color);
-        border: 1px solid var(--color-border-blue);
+        width: var(--component-form-input-width-default);
+        height: var(--component-form-input-height-default);
+        box-sizing: border-box;
+        border: var(--size-qtr-x) solid var(--component-form-input-border-color-default);
+        border-radius: var(--component-form-input-border-radius-default);
+        padding: var(--component-form-input-padding-default);
+        background: var(--component-form-input-background-default);
+        color: var(--component-form-input-color-default);
+      }
+      input:hover {
+        border-color: var(--component-form-input-border-color-hover);
       }
       input:focus {
-        outline: var(--component-form-input-focus-outline);
-        outline-offset: var(--component-form-input-focus-outline-offset);
+        border-color: var(--component-form-input-border-color-focus);
+        outline: 0;
+      }
+      label.disabled input {
+        border-color: var(--component-form-input-border-color-inactive);
+      }
+
+      label.error input {
+        border-color: var(--component-form-input-border-color-error);
+      }
+
+      #error-container {
+        height: var(--size-5x);
+        text-align: left;
+        width: var(--component-form-input-width-default);
+        margin: var(--size-unit) auto;
       }
     `
   }
@@ -38,7 +74,8 @@ class FormInput extends LitElement {
       'loading': { type: String, attribute: true },
       'validation': { type: Object, attribute: true },
       'valid': { type: Boolean, attribute: false },
-      'required': { type: Boolean, attribute: true }
+      'required': { type: Boolean, attribute: true },
+      'disabled': { type: Boolean, attribute: true }
     }
   }
 
@@ -50,11 +87,14 @@ class FormInput extends LitElement {
 
   render() {
     return html`
-      <label>
+      <label class=${classMap({
+        disabled: this.disabled
+      })}>
         <div>
-          <slot name='label'></slot>
+            <slot name='label'></slot>
         </div>
         <input
+          ?disabled=${this.disabled}
           name='${this.name}'
           class='form-input'
           type='${this.type}'

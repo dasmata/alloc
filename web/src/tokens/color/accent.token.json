@@ -1,7 +1,0 @@
-{
-  "color": {
-    "accent": {
-      "primary": { "value": "{color.base.blue.value}" }
-    }
-  }
-}

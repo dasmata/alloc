@@ -1,0 +1,17 @@
+{
+  "name": "tokens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tokens-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "style-dictionary build -c ../tokens/tokens-config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-math": "^0.4.0",
+    "expr-eval": "^2.0.2",
+    "style-dictionary": "^3.7.1"
+  }
+}

@@ -5,10 +5,9 @@ class FormError extends LitElement {
   static get styles() {
     return css`
       :host {
-        color: var(--component-form-error-color);
-        padding: var(--component-form-error-padding);
-        height: 1em;
-        display:block;
+        color: var(--component-form-input-color-error);
+        font-size: var(--font-size-body100);
+        line-height: var(--font-size-body100);
       }
     `
   }

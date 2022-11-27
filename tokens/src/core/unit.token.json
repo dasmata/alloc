@@ -1,0 +1,7 @@
+{
+  "unit": {
+    "value": "4",
+    "type": "sizing",
+    "description": "4px base unit of measurement."
+  }
+}

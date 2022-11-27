@@ -56,19 +56,21 @@ export default class FormInputController {
   }
 
   handleBlur = () => {
+    this.host.shadowRoot.querySelector('label').classList.remove('focus')
     this.validate('change');
   }
 
   handleFocus = () => {
+    this.host.shadowRoot.querySelector('label').classList.add('focus')
     this.error && this.resetError()
   }
 
   setError(type) {
     this.error = this.host.errorMessages ? this.host.errorMessages[type] : null;
     if(this.error){
-      const input = this.host.shadowRoot.querySelector('input');
-      input.classList.add('error')
-      input.setAttribute('aria-invalid', 'true');
+      const label = this.host.shadowRoot.querySelector('label');
+      label.classList.add('error')
+      label.setAttribute('aria-invalid', 'true');
     }
 
     if (!this.error) {
