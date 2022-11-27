@@ -1,0 +1,10 @@
+{
+  "opacity": {
+    "shadow": {
+      "primary": {
+        "value": "0.15",
+        "type": "opacity"
+      }
+    }
+  }
+}

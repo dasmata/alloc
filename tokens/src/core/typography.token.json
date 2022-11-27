@@ -1,0 +1,62 @@
+{
+  "font": {
+    "family": {
+      "roboto": {
+        "value": "Roboto",
+        "type": "fontFamily"
+      }
+    },
+    "weight": {
+      "regular": {
+        "value": "400",
+        "type": "fontWeight"
+      },
+      "medium": {
+        "value": "500",
+        "type": "fontWeight"
+      },
+      "bold": {
+        "value": "700",
+        "type": "fontWeight"
+      }
+    },
+    "size": {
+      "footnote" : {
+        "value": "12px",
+        "type": "fontSize"
+      },
+      "button": {
+        "value": "14px",
+        "type": "fontSize"
+      },
+      "body100" : {
+        "value": "14px",
+        "type": "fontSize"
+      },
+      "body200" : {
+        "value": "16px",
+        "type": "fontSize"
+      },
+      "headline100"  : {
+        "value": "16px",
+        "type": "fontSize"
+      },
+      "headline200"  : {
+        "value": "18px",
+        "type": "fontSize"
+      },
+      "title100"  : {
+        "value": "20px",
+        "type": "fontSize"
+      },
+      "title200"  : {
+        "value": "24px",
+        "type": "fontSize"
+      },
+      "title300"  : {
+        "value": "140px",
+        "type": "fontSize"
+      }
+    }
+  }
+}

@@ -10,11 +10,11 @@ class LoginPage extends LitElement {
     return css`
       :host{
         width: 30vw;
-        border: var(--size-border-primary-width) solid var(--color-border-black);
-        border-radius: 30px;
-        box-shadow: 5px 5px var(--color-base-black);
-        padding: var(--size-padding-large);
+        border-radius: var(--border-radius-100);
+        box-shadow: 0 var(--size-unit) var(--size-4x) var(--shadow-color-black-normal);
+        padding: var(--size-15x);
         text-align: center;
+        background-color: var(--color-base-white-200)
       }
     `
   }

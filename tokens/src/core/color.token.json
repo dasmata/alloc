@@ -1,0 +1,88 @@
+{
+  "color": {
+    "base": {
+      "primary": {
+        "value": "#6d07a6",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "#c800a1",
+        "type": "color"
+      },
+      "inactive": {
+        "value": "#decfe5",
+        "type": "color"
+      },
+      "accent": {
+        "value": "#54057f",
+        "type": "color"
+      },
+      "black": {
+        "100": {
+          "value": "#271334",
+          "type": "color"
+        }
+      },
+      "gray": {
+        "100": {
+          "value": "#404141",
+          "type": "color"
+        },
+        "200": {
+          "value": "#767676",
+          "type": "color"
+        },
+        "300": {
+          "value": "#9a9a9a",
+          "type": "color"
+        },
+        "400": {
+          "value": "#e5e5e5",
+          "type": "color"
+        }
+      },
+      "white": {
+        "100": {
+          "value": "#ffffff",
+          "type": "color"
+        },
+        "200": {
+          "value": "#fefefe",
+          "type": "color"
+        }
+      },
+      "green": {
+        "100": {
+          "value": "#00BB50",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "100": {
+          "value": "#FF8F1c",
+          "type": "color"
+        }
+      },
+      "red": {
+        "100": {
+          "value": "#F43a3a",
+          "type": "color"
+        }
+      },
+      "semantic": {
+        "danger": {
+          "value": "{color.base.red.100}",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "gradient": {
+    "base": {
+      "blueberry": { "value": "linear-gradient(241.1deg, #0033A0 0%, #C800A1 100%)" },
+      "raspberry": { "value": "linear-gradient(241.1deg, #C800A1 0%, #F4633A 100%)" },
+      "avocado": { "value": "linear-gradient(241.1deg, #00BB50 0%, #0033A0 100%)" },
+      "mango": { "value": "linear-gradient(241.1deg, #FFA81C 0%, #F4633A 99.46%)" }
+    }
+  }
+}

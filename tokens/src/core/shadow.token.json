@@ -1,0 +1,48 @@
+{
+  "shadow": {
+    "offset": {
+      "x": {
+        "none": {
+          "value": "0",
+          "type": "sizing"
+        }
+      },
+      "y": {
+        "halfX": {
+          "value": "{size.unit} / 2",
+          "type": "sizing"
+        },
+        "1x": {
+          "value": "{size.unit}",
+          "type": "sizing"
+        },
+        "2x": {
+          "value": "{size.unit} * 2",
+          "type": "sizing"
+        }
+      }
+    },
+    "radius": {
+      "4x": {
+        "value": "{size.unit} * 4",
+        "type": "sizing"
+      },
+      "5x": {
+        "value": "{size.unit} * 5",
+        "type": "sizing"
+      }
+    },
+    "color": {
+      "black": {
+        "normal": {
+          "value": "rgba(0, 0, 0, {opacity.shadow.primary})",
+          "type": "color"
+        },
+        "hover": {
+          "value": "rgba(0, 0, 0, 0.2)",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

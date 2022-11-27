@@ -1,0 +1,40 @@
+{
+  "border": {
+    "radius": {
+      "100": {
+        "value": "8",
+        "type": "borderRadius"
+      },
+      "300": {
+        "value": "22",
+        "type": "borderRadius"
+      },
+      "none": {
+        "value": "0",
+        "type": "borderRadius"
+      }
+    },
+    "width": {
+      "100": {
+        "value": "1",
+        "type": "borderWidth"
+      },
+      "200": {
+        "value": "2",
+        "type": "borderWidth"
+      },
+      "300": {
+        "value": "3",
+        "type": "borderWidth"
+      },
+      "400": {
+        "value": "4",
+        "type": "borderWidth"
+      },
+      "none": {
+        "value": "0",
+        "type": "borderWidth"
+      }
+    }
+  }
+}

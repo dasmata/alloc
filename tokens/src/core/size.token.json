@@ -1,0 +1,116 @@
+{
+  "size": {
+    "0": {
+      "value": "0",
+      "type": "sizing"
+    },
+    "none": {
+      "value": "0",
+      "type": "sizing"
+    },
+    "qtrX": {
+      "value": "1",
+      "type": "sizing"
+    },
+    "halfX": {
+      "value": "{size.unit} / 2",
+      "type": "sizing"
+    },
+    "1x": {
+      "value": "{size.unit} * 1",
+      "type": "sizing"
+    },
+    "2x": {
+      "value": "{size.unit} * 2",
+      "type": "sizing"
+    },
+    "3x": {
+      "value": "{size.unit} * 3",
+      "type": "sizing"
+    },
+    "4x": {
+      "value": "{size.unit} * 4",
+      "type": "sizing"
+    },
+    "5x": {
+      "value": "{size.unit} * 5",
+      "type": "sizing"
+    },
+    "6x": {
+      "value": "{size.unit} * 6",
+      "type": "sizing"
+    },
+    "7x": {
+      "value": "{size.unit} * 7",
+      "type": "sizing"
+    },
+    "8x": {
+      "value": "{size.unit} * 8",
+      "type": "sizing"
+    },
+    "9x": {
+      "value": "{size.unit} * 9",
+      "type": "sizing"
+    },
+    "10x": {
+      "value": "{size.unit} * 10",
+      "type": "sizing"
+    },
+    "11x": {
+      "value": "{size.unit} * 11",
+      "type": "sizing"
+    },
+    "12x": {
+      "value": "{size.unit} * 12",
+      "type": "sizing"
+    },
+    "13x": {
+      "value": "{size.unit} * 13",
+      "type": "sizing"
+    },
+    "14x": {
+      "value": "{size.unit} * 14",
+      "type": "sizing"
+    },
+    "15x": {
+      "value": "{size.unit} * 15",
+      "type": "sizing"
+    },
+    "16x": {
+      "value": "{size.unit} * 16",
+      "type": "sizing"
+    },
+    "20x": {
+      "value": "{size.unit} * 20",
+      "type": "sizing"
+    },
+    "25x": {
+      "value": "{size.unit} * 25",
+      "type": "sizing"
+    },
+    "30x": {
+      "value": "{size.unit} * 30",
+      "type": "sizing"
+    },
+    "40x": {
+      "value": "{size.unit} * 40",
+      "type": "sizing"
+    },
+    "60x": {
+      "value": "{size.unit} * 60",
+      "type": "sizing"
+    },
+    "90x": {
+      "value": "{size.unit} * 90",
+      "type": "sizing"
+    },
+    "unit": {
+      "value": "{unit}",
+      "type": "sizing"
+    },
+    "base": {
+      "value": "{unit}",
+      "type": "sizing"
+    }
+  }
+}

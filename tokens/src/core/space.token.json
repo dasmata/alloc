@@ -1,0 +1,92 @@
+{
+  "space": {
+    "0": {
+      "value": "0",
+      "type": "spacing"
+    },
+    "none": {
+      "value": "0",
+      "type": "spacing"
+    },
+    "qtrX": {
+      "value": "1",
+      "type": "spacing"
+    },
+    "halfX": {
+      "value": "{space.unit} / 2",
+      "type": "spacing"
+    },
+    "1x": {
+      "value": "{space.unit}",
+      "type": "spacing"
+    },
+    "2x": {
+      "value": "{space.unit} * 2",
+      "type": "spacing"
+    },
+    "3x": {
+      "value": "{space.unit} * 3",
+      "type": "spacing"
+    },
+    "4x": {
+      "value": "{space.unit} * 4",
+      "type": "spacing"
+    },
+    "5x": {
+      "value": "{space.unit} * 5",
+      "type": "spacing"
+    },
+    "6x": {
+      "value": "{space.unit} * 6",
+      "type": "spacing"
+    },
+    "8x": {
+      "value": "{space.unit} * 8",
+      "type": "spacing"
+    },
+    "10x": {
+      "value": "{space.unit} * 10",
+      "type": "spacing"
+    },
+    "12x": {
+      "value": "{space.unit} * 12",
+      "type": "spacing"
+    },
+    "16x": {
+      "value": "{space.unit} * 16",
+      "type": "spacing"
+    },
+    "20x": {
+      "value": "{space.unit} * 20",
+      "type": "spacing"
+    },
+    "24x": {
+      "value": "{space.unit} * 24",
+      "type": "spacing"
+    },
+    "32x": {
+      "value": "{space.unit} * 32",
+      "type": "spacing"
+    },
+    "40x": {
+      "value": "{space.unit} * 40",
+      "type": "spacing"
+    },
+    "56x": {
+      "value": "{space.unit} * 56",
+      "type": "spacing"
+    },
+    "64x": {
+      "value": "{space.unit} * 64",
+      "type": "spacing"
+    },
+    "unit": {
+      "value": "{unit}",
+      "type": "spacing"
+    },
+    "base": {
+      "value": "{unit}",
+      "type": "spacing"
+    }
+  }
+}

@@ -60,12 +60,13 @@ describe('FormInput', () => {
   it('validates empty inputs', async () => {
     validation.empty.mockReturnValueOnce(false)
     const input = element.shadowRoot.querySelector('input');
+    const label = element.shadowRoot.querySelector('label');
     input.focus()
     input.blur()
     jExpect(validation.empty).toHaveBeenCalledTimes(1)
     await (new Promise((r) => {
       setTimeout(() => {
-        expect(input.className).to.include('error')
+        expect(label.className).to.include('error')
         const err = element.shadowRoot.querySelector('form-error');
         expect(err).to.exist
         expect(err.getAttribute('message')).to.be.equal(errors.required)
@@ -131,6 +132,7 @@ describe('FormInput', () => {
 
   it('validates on input', async () => {
     const input = element.shadowRoot.querySelector('input');
+    const label = element.shadowRoot.querySelector('label');
     validation.empty.mockReturnValueOnce(true)
     validation.input.mockReturnValueOnce(false)
     input.value = 'test'
@@ -141,7 +143,7 @@ describe('FormInput', () => {
     return await (new Promise( r => {
       setTimeout(() => {
         jExpect(validation.input).toHaveBeenCalledTimes(1)
-        expect(input.className).to.include('error')
+        expect(label.className).to.include('error')
         const err = element.shadowRoot.querySelector('form-error');
         expect(err).to.exist
         expect(err.getAttribute('message')).to.be.equal(errors.input)
@@ -152,6 +154,7 @@ describe('FormInput', () => {
 
   it('validates on change', async () => {
     const input = element.shadowRoot.querySelector('input');
+    const label = element.shadowRoot.querySelector('label');
     validation.empty.mockReturnValueOnce(true)
     validation.change.mockReturnValueOnce(false)
     input.dispatchEvent(new Event('change', {
@@ -161,7 +164,7 @@ describe('FormInput', () => {
     return await (new Promise( r => {
       setTimeout(() => {
         jExpect(validation.change).toHaveBeenCalledTimes(1)
-        expect(input.className).to.include('error')
+        expect(label.className).to.include('error')
         const err = element.shadowRoot.querySelector('form-error');
         expect(err).to.exist
         expect(err.getAttribute('message')).to.be.equal(errors.change)
@@ -224,6 +227,7 @@ describe('FormInput', () => {
 
   it('validates on input async', async () => {
     const input = element.shadowRoot.querySelector('input');
+    const label = element.shadowRoot.querySelector('label');
     const validationPromise = new Promise(r => {
       setTimeout(() => r(false), 1000)
     })
@@ -237,7 +241,7 @@ describe('FormInput', () => {
     await (new Promise( r => {
       setTimeout(() => {
         jExpect(validation.input).toHaveBeenCalledTimes(1)
-        expect(input.className).to.include('error')
+        expect(label.className).to.include('error')
         const err = element.shadowRoot.querySelector('form-error');
         expect(err).to.exist
         expect(err.getAttribute('message')).to.be.equal(errors.input)
@@ -248,6 +252,7 @@ describe('FormInput', () => {
 
   it('validates on change async', async () => {
     const input = element.shadowRoot.querySelector('input');
+    const label = element.shadowRoot.querySelector('label');
     const validationPromise = new Promise(r => {
       setTimeout(() => r(false), 1000)
     })
@@ -261,7 +266,7 @@ describe('FormInput', () => {
     await (new Promise( r => {
       setTimeout(() => {
         jExpect(validation.change).toHaveBeenCalledTimes(1)
-        expect(input.className).to.include('error')
+        expect(label.className).to.include('error')
         const err = element.shadowRoot.querySelector('form-error');
         expect(err).to.exist
         expect(err.getAttribute('message')).to.be.equal(errors.change)

@@ -19,6 +19,7 @@
 /*/**/._site/
 /*/**/.dist/
 /*/**/.out-tsc/
+/tokens/build
 
 storybook-static
 /web/.custom-elements.json

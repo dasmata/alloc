@@ -11,7 +11,7 @@ class AllocApp extends LitElement {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: var(--color-background-primary);
+        background-color: var(--color-base-white-100);
       }
     `;
   }
