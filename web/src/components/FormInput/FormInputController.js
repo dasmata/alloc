@@ -84,9 +84,9 @@ export default class FormInputController {
 
   resetError() {
     this.error = null;
-    const input = this.host.shadowRoot.querySelector('input');
-    input.classList.remove('error')
-    input.removeAttribute('aria-invalid');
+    const label = this.host.shadowRoot.querySelector('label');
+    label.classList.remove('error')
+    label.removeAttribute('aria-invalid');
     this.observable.notify(() => ({
       loading: this.loading,
       error: this.error

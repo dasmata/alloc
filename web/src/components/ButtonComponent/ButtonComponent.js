@@ -34,6 +34,17 @@ class ButtonComponent extends LitElement {
     }
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.shadowRoot.addEventListener('click', (e) => {
+      if(this.disabled){
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
+      }
+    })
+  }
+
   render() {
     return html`<button ?disabled=${this.disabled}>
       <slot name='prefix-icon'></slot>

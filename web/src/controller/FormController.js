@@ -4,6 +4,7 @@ export default class FormController {
     this.inputs = new Set();
     this.submitBtns = new Set();
     this.submitHandler = submitHandler;
+    this.blocked = false;
   }
 
   hostConnected() {
@@ -50,6 +51,9 @@ export default class FormController {
 
   handleSubmit = async e => {
     e.preventDefault();
+    if(this.blocked){
+      return;
+    }
     const valid = await this.validate();
     if (!valid) {
       return;
@@ -59,5 +63,15 @@ export default class FormController {
       Object.assign(data, el.controller.data)
     });
     this.submitHandler(data)
+  }
+
+  blockForm() {
+    this.blocked = true;
+    this.submitBtns.forEach(btn => btn.disabled = true)
+  }
+
+  releaseForm() {
+    this.blocked = false;
+    this.submitBtns.forEach(btn => btn.disabled = false)
   }
 }

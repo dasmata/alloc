@@ -16,6 +16,7 @@ export default class LoginController {
   handleSubmit = async data => {
     this.observable.notify([])
     try {
+      this.formController.blockForm();
       const { abort, promise } = this.identityService.auth(data);
       this.abort = abort;
       await promise;
@@ -23,9 +24,10 @@ export default class LoginController {
       const router = await di('router');
       router.redirect(window.history?.state?.redirect ?? 'home')
     } catch (e) {
+      this.formController.releaseForm();
       this.abort = null;
       const state = [];
-      if (e instanceof HttpResponseError) {
+      if (e instanceof HttpResponseError && e.response.status === 401) {
         state.push({
           message: 'Invalid username or pass',
           type: 'error'
