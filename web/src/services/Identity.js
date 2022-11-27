@@ -1,6 +1,6 @@
 export default class Identity {
   constructor(httpService, logService){
-    this.user = null;
+    this.user = localStorage.identity ? JSON.parse(localStorage.identity) : null;
     this.httpService = httpService;
     this.logService = logService;
   }
@@ -14,6 +14,7 @@ export default class Identity {
     const prm = s.post('user/login', data);
     prm.then(userData => {
       this.user = userData;
+      localStorage.identity = JSON.stringify(this.user);
       return this.user;
     })
     const { abort, promise } = s.run();
