@@ -7,10 +7,6 @@ class AllocApp extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         background-color: var(--color-base-white-100);
       }
     `;
@@ -24,7 +20,6 @@ class AllocApp extends LitElement {
 
   constructor() {
     super();
-    this.title = 'My app';
   }
 
   setPage(pageElement){

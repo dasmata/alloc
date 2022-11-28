@@ -9,12 +9,19 @@ class LoginPage extends LitElement {
   static get styles(){
     return css`
       :host{
-        width: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      main {
+        width: var(--size-90x);
         border-radius: var(--border-radius-100);
         box-shadow: 0 var(--size-unit) var(--size-4x) var(--shadow-color-black-normal);
         padding: var(--size-15x);
         text-align: center;
-        background-color: var(--color-base-white-200)
+        background-color: var(--color-base-white-200);
       }
     `
   }
