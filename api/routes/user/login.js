@@ -6,25 +6,24 @@ import User from '../../models/user.js';
 
 const router = express.Router();
 
-// router.post('/', (req, res) => {
-//     res.json({
-//         name: 'Tiberiu',
-//         token: 'jwiwmc943uwk3-04kdf-3832d,jsowsdnjr',
-//         rights: 2
-//     })
-// })
+router.post('/', (req, res) => {
+    res.json({
+        name: 'Tiberiu',
+        token: 'jwiwmc943uwk3-04kdf-3832d,jsowsdnjr',
+        rights: 2
+    })
+})
 
 router.post('/', async (req,res)=>{ 
-    const{ email, password}=req.body;
+    const{ email, password} = req.body;
     console.log(req.body);
-    let existingUser;
 
     const user= await User.findOne({email:email});
     console.log('user',user);
 
+    let existingUser;
     try{
         existingUser=await User.findOne({email:email});
-        console.log(existingUser);
     }catch(err){
         return res.status(400);
     }
