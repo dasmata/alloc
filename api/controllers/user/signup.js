@@ -36,12 +36,12 @@ export default async function signup (req,res,next) {
         process.env.KEY_ONE,
         {expiresIn:'1h'}
          );
+        createdUser.token=token;
     }catch(err){
         return res.status(400).send('signup failed');
     }
 
-    createdUser.token=token;
 
-    res.status(200).json({userId:createdUser.id, email: createdUser.email, password: createdUser.password, token:token});
+    res.status(200).json({userId:createdUser.id, email: createdUser.email, password: createdUser.password, token:createdUser.token});
 
 }

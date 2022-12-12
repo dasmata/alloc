@@ -9,9 +9,5 @@ const userSchema= new Schema({
     token: {type:String},
 })
 
-
-
-// module.exports= mongoose.model('User', userSchema);
-
 export default  mongoose.model('User', userSchema);
 
