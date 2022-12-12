@@ -1,17 +1,21 @@
 import express, { application, json } from 'express';
 import loginRouter from './routes/user/login.js';
-import signupRouter from './routes/user/signup.js'
+
+import signupRouter from './routes/user/signup.js';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
+
+
 import mongoose from 'mongoose';
 const app = express();
 
 app.use(cors());
-app.use(express.json())
 
+app.use(express.json());
+app.use(cookieParser());
 
 app.use('/v1.0/user/signup',signupRouter)
 app.use('/v1.0/user/login', loginRouter)
-
 
 
 mongoose.set('strictQuery', true);

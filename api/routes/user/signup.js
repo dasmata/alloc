@@ -4,12 +4,12 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 
-// import * as UserController from '../../conrollers/users-controller.js';
- import User from '../../models/user.js';
-import user from '../../models/user.js';
+import User from '../../models/user.js';
+
 
 
 const router = express.Router();
+
 
 // router.post('/signup',UserController.signup)
 
@@ -30,6 +30,7 @@ const router = express.Router();
 //         }
 //     })
 // })
+
 
 router.post('/', async (req,res)=>{
     const{ name, email, password} = req.body;
@@ -80,8 +81,6 @@ router.post('/', async (req,res)=>{
 
     createdUser.token=token;
 
-    
-
     res.status(200).json({userId:createdUser.id, email: createdUser.email, password: createdUser.password, token:token});
 
 })
@@ -131,9 +130,6 @@ router.post('/login', async (req,res)=>{
     res.status(200).json({ userId:existingUser.id, email: existingUser.email,token:token});
 
 })
-
-
-
 
 
 
