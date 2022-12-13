@@ -29,13 +29,14 @@ export default async function signup (req,res,next) {
         return res.status(400);
     }
 
-    
     try{
         const token = jwt.sign(
-        {userId: createdUser.id, email:createdUser.email},
-        process.env.KEY_ONE,
-        {expiresIn:'1h'}
-         );
+            {   userId: createdUser.id,
+                email:createdUser.email
+            },
+            process.env.KEY_ONE,
+            {   expiresIn:'1h'});
+            
         createdUser.token=token;
     }catch(err){
         return res.status(400).send('signup failed');
