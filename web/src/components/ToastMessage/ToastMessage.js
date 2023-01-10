@@ -55,7 +55,6 @@ class ToastMessage extends LitElement{
       ToastMessage.container.addToast(html`<div class=${classMap(classes)}>${this.message}</div>`, this.id)
     } else {
       ToastMessage.container.removeToast(this.id)
-
     }
   }
 

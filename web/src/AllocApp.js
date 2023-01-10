@@ -22,10 +22,6 @@ class AllocApp extends LitElement {
     super();
   }
 
-  setPage(pageElement){
-    this.pageElement = pageElement;
-  }
-
   async connectedCallback() {
     super.connectedCallback();
     di().init(this)
@@ -33,9 +29,29 @@ class AllocApp extends LitElement {
     router.init()
   }
 
+  /*** WebComponents lifecycle ***/
+  // disconnectedCallback
+  // attributeChangeCallback
+  // adoptedCallback
+
+  /*** LitElement lifecycle ***/
+  // hasChanged()
+  // requestUpdate()
+  // performUpdate()
+  // shouldUpdate()
+  // willUpdate()
+  // update()
+  // render()
+  // firstUpdated()
+  // updated()
+
+  // updateComplete Promise
+  // scheduleUpdate
+
   render() {
-    return html`${until(this.pageElement, html`<div>Loading...</div>`)}`
-    ;
+    return html`${
+      until(this.pageElement, html`<div>Loading...</div>`)
+    }`;
   }
 }
 

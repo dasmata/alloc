@@ -36,7 +36,7 @@ export default class FormController {
 
 
   async validate(){
-    const results = await Promise.all(Array.from(this.inputs).map(inputController => inputController.controller.validate('change')));
+    const results = await Promise.all(Array.from(this.inputs).map(input => input.controller.validate('change')));
     return Boolean(results.reduce((acc, result) => acc & result, 1));
   }
 

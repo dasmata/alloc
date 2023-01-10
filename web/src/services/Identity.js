@@ -13,6 +13,9 @@ export default class Identity {
     const s = this.httpService.sequence();
     const prm = s.post('user/login', data);
     prm.then(userData => {
+      if (userData instanceof Error) {
+        return userData;
+      }
       this.user = userData;
       localStorage.identity = JSON.stringify(this.user);
       return this.user;

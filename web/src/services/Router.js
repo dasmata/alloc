@@ -20,7 +20,7 @@ export default class Router {
     const routeName = typeof name === 'symbol' ? name : Symbol.for(name)
     const route = this.config[routeName];
     if(this.acl.isAllowed(routeName)){
-      await this.app.setPage(await Router.load(route, params))
+      this.app.pageElement = Router.load(route)
       if(route?.path){
         window.history.pushState(params, '', route.path)
       }
